@@ -7,7 +7,7 @@ resource "aws_s3_bucket" "default" {
   tags          = module.this.tags
 
   versioning {
-    enabled = var.versioning_enabled
+    enabled = true
   }
 
   lifecycle_rule {
