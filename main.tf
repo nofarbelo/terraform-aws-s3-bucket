@@ -8,7 +8,7 @@ resource "aws_s3_bucket" "default" {
 
   versioning {
     enabled = var.versioning_enabled
-  }
+  } 
 
   lifecycle_rule {
     id                                     = module.this.id
