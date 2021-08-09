@@ -147,6 +147,9 @@ resource "aws_s3_bucket" "default" {
       }
     }
   }
+  versioning {
+    enabled = true
+  }
 }
 
 module "s3_user" {
