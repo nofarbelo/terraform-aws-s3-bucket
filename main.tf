@@ -1,3 +1,18 @@
+resource "aws_s3_bucket" "nofat_test_data_science" {
+  # bucket is not encrypted
+  bucket = "${local.resource_prefix.value}-data-science"
+  acl    = "private"
+  versioning {
+    enabled = var.enabled
+  }
+  logging {
+    target_bucket = "${aws_s3_bucket.logs.id}"
+    target_prefix = "log/"
+  }
+  force_destroy = true
+
+}
+
 resource "aws_s3_bucket" "default" {
   count         = module.this.enabled ? 1 : 0
   bucket        = module.this.id

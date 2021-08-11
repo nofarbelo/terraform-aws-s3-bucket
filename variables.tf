@@ -218,3 +218,8 @@ variable "replication_rules" {
   description = "Specifies the replication rules if S3 bucket replication is enabled"
 }
 
+variable "enabled" {
+  type        = bool
+  default     = false
+}
+
